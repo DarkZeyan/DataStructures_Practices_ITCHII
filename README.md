@@ -5,4 +5,7 @@
 This repository has been made for the practices of Data Structure which is the programming subject that I'm currently studying at ITCHII.
 <br/>
 
+ 
+ <p align="right" style="font-size:12px">Jorge Eduardo Escobar Bugarini</p>
+
 <p align="center"><img src="https://c.tenor.com/6x3KJ9Fx1lgAAAAi/hu-tao-genshin-impact.gif" width="400"/></p>
