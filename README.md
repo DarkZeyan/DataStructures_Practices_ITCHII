@@ -2,7 +2,7 @@
 
 <p align="center"><img src="https://1000marcas.net/wp-content/uploads/2020/11/Java-logo.png" width="400"/></p>
 
-This repository has been made for the practices of Data Structure which is the programming subject that I'm currently studying at ITCHII.
+This repository has been made for the practices of Data Structures which is the programming subject that I'm currently studying at ITCHII.
 <br/>
 
  
