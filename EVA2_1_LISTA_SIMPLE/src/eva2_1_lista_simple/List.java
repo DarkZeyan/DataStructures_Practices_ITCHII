@@ -17,7 +17,11 @@ public class List {
     public void print(){
         Node temp = start;
         while(temp != null){
-            System.out.print(temp.getValue() + " - ");
+            if(temp.getNext()!=null){
+                System.out.print(temp.getValue() + " - ");
+            }else{
+                System.out.print(temp.getValue()+" ");
+            }
             temp =  temp.getNext();
         }
     }
@@ -52,10 +56,29 @@ public class List {
         return cont;
     }
     
-    public void insertInto(int value, int pos){
+    public void insertAt(int value, int pos) throws Exception{
         //Insertar en una posicion no valida
         //Posiciones negativas o mayores a la cantidad de elementos;
-        
+        if(pos < 0){
+            throw new Exception("No es posible insertar un elemento en una posicion negativa");
+        }else if(pos>=size()){
+            throw new Exception(pos+" No es una posicion valida en la lista");
+        }else{
+            //Insertar al inicio de la lista
+            Node newNode = new Node(value);
+            cont++;
+            if(pos==0){
+                newNode.setNext(start);
+                start = newNode;
+            }else{
+                Node temp = start;
+                for(int i=1; i<pos-1; i++){
+                    temp=temp.getNext();
+                }
+                    newNode.setNext(temp.getNext());
+                    temp.setNext(newNode);
+            }
+        }
     }
     
     
