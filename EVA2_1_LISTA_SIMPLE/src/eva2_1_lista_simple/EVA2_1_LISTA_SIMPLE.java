@@ -26,13 +26,13 @@ public class EVA2_1_LISTA_SIMPLE {
             myList.insertAt(0, 0);
             myList.insertAt(1, 1);
             myList.deleteAt(4);
+            myList.clear();
             myList.deleteAt(0);
-            myList.deleteAt(4);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
         myList.print();
-        
+        System.out.println("Tamaño de la lista: "+myList.size());
        
      }
 }
