@@ -24,6 +24,7 @@ public class List {
             }
             temp =  temp.getNext();
         }
+        if(size()==0) System.out.println("La lista esta vacia");
     }
     
     
@@ -64,13 +65,15 @@ public class List {
         }else if(pos>=size()){
             throw new Exception(pos+" No es una posicion valida en la lista");
         }else{
-            //Insertar al inicio de la lista
+            
             Node newNode = new Node(value);
-            cont++;
+            cont++; // El contador se aumenta en uno debido a la creacion del nuevo nodo, este asegura un incremento en el numero de elementos de la lista.
+            //Insertar al inicio de la lista
             if(pos==0){
                 newNode.setNext(start);
                 start = newNode;
-            }else{
+            } // Insertar en cualquier otra posicion
+            else{
                 Node temp = start;
                 for(int i=1; i<pos-1; i++){
                     temp=temp.getNext();
@@ -80,6 +83,32 @@ public class List {
             }
         }
     }
+    
+   public void clear(){
+       start = null;
+       last = null;
+       cont=0;
+   }
+   
+   public void deleteAt(int pos) throws Exception{
+       
+       if(pos<0){
+            throw new Exception("No existen posiciones negativas en la lista");
+       }else if(pos>=size()){
+           throw new Exception("No hay un elemento en la posicion asignada");
+        }else{
+           cont--;
+           Node temp = start;
+           if(pos==0){              
+           temp.setNext(temp.getNext());
+           start = temp.getNext();      
+           }
+           for(int i=1; i<pos-1; i++){
+               temp=temp.getNext();
+           }
+           temp.setNext(temp.getNext().getNext());
+       }
+   }
     
     
 }

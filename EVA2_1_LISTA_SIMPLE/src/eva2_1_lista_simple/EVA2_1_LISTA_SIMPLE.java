@@ -24,11 +24,15 @@ public class EVA2_1_LISTA_SIMPLE {
             myList.insertAt(20, 0);
             myList.insertAt(10,0);
             myList.insertAt(0, 0);
+            myList.insertAt(1, 1);
+            myList.deleteAt(4);
+            myList.deleteAt(0);
+            myList.deleteAt(4);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
         myList.print();
         
-        System.out.println("Tamano de la lista: "+myList.size());
+       
      }
 }
