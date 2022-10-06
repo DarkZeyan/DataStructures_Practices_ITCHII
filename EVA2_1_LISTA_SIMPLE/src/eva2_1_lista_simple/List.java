@@ -120,9 +120,35 @@ public class List {
                     }
                     //Se asigna como siguiente al siguiente nodo del nodo actual.
                     temp.setNext(temp.getNext().getNext());
+                    if (pos == size() - 1) { //Reconectar al final de la lista.
+                        last = temp;
+                    }
                 }
             }
         }
     }
 
+    public int getValueAt(int pos) throws Exception {
+        Node temp = start;
+
+        if (start == null) {
+            throw new Exception("No existen elementos en la lista, es imposible obtener el elemento");
+        } else {
+            if (pos < 0) {
+                throw new Exception("No existen posiciones negativas en la lista");
+            } else if (pos > size()) { //Se quieren eliminar elementos en posiciones que no existen debido a que estan fuera del numero de elementos, no se pueden eliminar.
+                throw new Exception("No hay un elemento en la posicion asignada");
+            } else {
+                if (pos == 0) {
+                    return start.getValue();
+                } else {
+                    for (int i = 1; i < pos-1; i++) {
+                        //Se obtiene cada elemento hasta llegar a la posicion deseada.
+                        temp = temp.getNext();
+                    }
+                    return temp.getValue();
+                }
+            }
+        }
+    }
 }
