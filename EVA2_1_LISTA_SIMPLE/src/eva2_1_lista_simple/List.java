@@ -142,13 +142,37 @@ public class List {
                 if (pos == 0) {
                     return start.getValue();
                 } else {
-                    for (int i = 1; i < pos-1; i++) {
+                    for (int i = 1; i < pos - 1; i++) {
                         //Se obtiene cada elemento hasta llegar a la posicion deseada.
                         temp = temp.getNext();
                     }
                     return temp.getValue();
                 }
             }
+        }
+    }
+
+    public boolean isEmpty() {
+        return start == null;
+    }
+
+    public void find(int value){
+        Node temp =  start;
+        int pos=0;
+        boolean valueExists=false;
+        while(temp!=null){
+            
+            if(temp.getValue()==value){
+                valueExists=true;
+                break;
+            }
+            pos++;
+            temp = temp.getNext();
+        }
+        if(valueExists){
+            System.out.println("El valor esta en la posicion: "+pos);
+        }else { 
+            System.out.println("El valor no se encuentra en la lista");
         }
     }
 }

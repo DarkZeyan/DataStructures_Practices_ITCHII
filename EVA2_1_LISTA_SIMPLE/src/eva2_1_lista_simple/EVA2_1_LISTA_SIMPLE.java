@@ -30,12 +30,13 @@ public class EVA2_1_LISTA_SIMPLE {
             myList.deleteAt(4);
             myList.deleteAt(0);
             myList.deleteAt(4);
-            System.out.println("Valor en la posicion 3: "+myList.getValueAt(1));
+            System.out.println("Valor en la posicion 3: "+myList.getValueAt(3));
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
         myList.print();
         System.out.println("Tamaño de la lista: " + myList.size());
-
+        System.out.println(myList.isEmpty());
+        myList.find(0);
     }
 }
