@@ -15,6 +15,26 @@ public class EVA2_3_LISTA_DOBLE {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        
+        DoubleList myList = new DoubleList();
+        
+        myList.add(20);
+        myList.add(30);
+        myList.add(40);
+        
+        
+        try {
+            myList.insertAt(10, 2);
+            myList.insertAt(30, 3);
+            myList.deleteAt(5);
+            
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        myList.print();
+        System.out.println("Lista inverso\n");
+        myList.reversePrint();
     }
     
 }
