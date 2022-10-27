@@ -31,20 +31,22 @@ public class Node {
         this.value= value;
     }
 
-    public Node getNext() {
+    public Node getLeft() {
         return left;
     }
 
-    public void setNext(Node next) {
-        this.left =  next;
+    public void setLeft(Node left) {
+        this.left = left;
     }
 
-    public Node getPrevious() {
+    public Node getRight() {
         return right;
     }
 
-    public void setPrevious(Node previous) {
-        this.right = previous;
+    public void setRight(Node right) {
+        this.right = right;
     }
+
+
 
 }
