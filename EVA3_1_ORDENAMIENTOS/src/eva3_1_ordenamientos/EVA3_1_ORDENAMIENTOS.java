@@ -22,12 +22,29 @@ public class EVA3_1_ORDENAMIENTOS {
         //print the array
         printArray(array);
         //copy array
-        
+        double ini,fin;
+        //Selection sort
+
         int[] arraySel = new int[array.length];
         duplicate(array,arraySel);
         printArray(arraySel);
+        ini=System.nanoTime();
         selecSort(arraySel);
+        fin=System.nanoTime();
         printArray(arraySel);
+        System.out.println("Selection Sort: "+(fin-ini));
+        //InsertionSort
+
+        int[] arrayIns = new int[array.length];
+        duplicate(array,arrayIns);
+        printArray(arrayIns);
+        ini=System.nanoTime();
+        insertionSort(arrayIns);
+        fin=System.nanoTime();
+        printArray(arrayIns);
+        
+        System.out.println("Insertion Sort: "+(fin-ini));
+
     }
 
     public static void fill(int[] array) {
@@ -79,9 +96,8 @@ public class EVA3_1_ORDENAMIENTOS {
                     array[insertion_point]=array[prev];
                     insertion_point--;
                 }else{
-                    
+                    break;
                 }
-
             }
         }
     }
