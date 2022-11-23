@@ -102,4 +102,36 @@ public class EVA3_1_ORDENAMIENTOS {
         }
     }
 
+    //Quicksort
+    public static void quickSort(int array[]){
+        quickSortRecursion(array, 0, array.length-1);
+    }
+    private static void quickSortRecursion(int array[], int start, int end){
+        //pivote → posicion
+        // dos indices
+        /*
+         * Indice grande => busca los valores mayores al pivote
+         * indice pequeño => busca los indices menores al pivote
+         * Si se encuentran valores, se intercambia
+         * Si se cruzan, se intercambia el pivote con el indice peque;o
+         * quicksort a cada lado del pivote
+         */
+
+         int pivote =  start;
+         int bigIndex =  start+1;
+         int smallIndex =  end;
+
+         while(array[bigIndex]<=array[pivote]){
+            bigIndex++;
+         }
+         while(array[smallIndex]>=array[pivote]){
+            smallIndex--;
+         }
+         if(bigIndex<smallIndex){
+            int temp=array[smallIndex];
+            array[smallIndex]=array[bigIndex];
+            array[bigIndex]=temp;
+         }
+    }
+    
 }
