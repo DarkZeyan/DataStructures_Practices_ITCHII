@@ -44,7 +44,15 @@ public class EVA3_1_ORDENAMIENTOS {
         printArray(arrayIns);
         
         System.out.println("Insertion Sort: "+(fin-ini));
-
+        //Quicksort
+        int[] arrayQuick = new int[array.length];
+        duplicate(array, arrayQuick);
+        printArray(arrayQuick);
+        ini=System.nanoTime();
+        quickSort(arrayQuick);
+        fin=System.nanoTime();
+        printArray(arrayQuick);
+        System.out.println("QuickSort: "+(fin-ini));
     }
 
     public static void fill(int[] array) {
@@ -117,21 +125,30 @@ public class EVA3_1_ORDENAMIENTOS {
          * quicksort a cada lado del pivote
          */
 
-         int pivote =  start;
-         int bigIndex =  start+1;
-         int smallIndex =  end;
-
-         while(array[bigIndex]<=array[pivote]){
-            bigIndex++;
-         }
-         while(array[smallIndex]>=array[pivote]){
-            smallIndex--;
-         }
-         if(bigIndex<smallIndex){
-            int temp=array[smallIndex];
-            array[smallIndex]=array[bigIndex];
-            array[bigIndex]=temp;
-         }
+        int pivote =  array[start];
+        int bigIndex =  start;
+        int smallIndex =  end;
+        do{
+           while(array[bigIndex]<pivote){
+               bigIndex++;
+           }
+           while(array[smallIndex]>pivote){
+               smallIndex--;
+           }
+           if(bigIndex<=smallIndex){
+               int temp =  array[bigIndex];
+               array[bigIndex]=array[smallIndex];
+               array[smallIndex]=temp;
+               bigIndex++;
+               smallIndex--;
+           }
+        }while(bigIndex<=smallIndex);
+        if(start<smallIndex){
+           quickSortRecursion(array, start, smallIndex);
+        }
+        if(bigIndex<end){
+           quickSortRecursion(array, bigIndex, end);
+        }
     }
     
 }
