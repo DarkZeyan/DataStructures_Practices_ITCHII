@@ -108,6 +108,7 @@ public class EVA3_1_ORDENAMIENTOS {
                     break;
                 }
             }
+            array[insertion_point] = temp;
         }
     }
 
