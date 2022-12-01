@@ -169,7 +169,7 @@ public class EVA3_1_ORDENAMIENTOS {
              
                 bigIndex++;
             }
-            while (array[smallIndex] >= array[pivote] && (smallIndex>0)) {
+            while (array[smallIndex] > array[pivote]) {
              
                 smallIndex--;
                 
