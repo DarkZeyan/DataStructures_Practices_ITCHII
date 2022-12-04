@@ -87,10 +87,13 @@ import java.util.Scanner;
         if(start<end){
             if(value==array[mid]) 
                 resu=mid;
-            else if(value<array[mid])
-            resu=binarySearchRecursion(array, start, mid-1, value);
-            else
+            else if(value<array[mid]){
+                resu=binarySearchRecursion(array, start, mid-1, value);
+            }
+                
+            else{
                 resu=binarySearchRecursion(array, mid+1, end, value);
+            }
         }
         return resu;
     }
